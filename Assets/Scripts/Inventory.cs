@@ -11,12 +11,10 @@ public class Inventory : MonoBehaviour
 
     public const int numItemSlots = 3;
 
-    public int itemCount = 0;
-
 
     public void AddItem(Item itemToAdd, int ItemCount)
     {
-        //look through all items slots to find one that is empty --> then populate it with item
+        //look through all items slots to find one that is empty --> then populate it with desired amount of items
         for (int i = 0; i < items.Length; i++)
         {
             if (items[i] == null)
