@@ -8,6 +8,11 @@ public class TravellerController : MonoBehaviour
 
 	void Start()
 	{
+        Inventory PlayerInventory = GetComponentInChildren<Inventory>();
+        if (PlayerInventory != null)
+        {
+            PlayerInventory.AddItem(new Item(), 1);
+        }
 	}
 
 	void Update()
