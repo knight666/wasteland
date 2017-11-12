@@ -11,6 +11,25 @@ public class Inventory : MonoBehaviour
 
     public const int numItemSlots = 3;
 
+    public Sprite GetItemSprite(Item item)
+    {
+        switch (item.type)
+        {
+
+        case Item.Type.Food:
+            return Resources.Load<Sprite>("Sprites/food");
+
+        case Item.Type.Gasoline:
+            return Resources.Load<Sprite>("Sprites/gasoline");
+
+        case Item.Type.Water:
+            return Resources.Load<Sprite>("Sprites/water");
+
+        default:
+            return null;
+
+        }
+    }
 
     public void AddItem(Item itemToAdd, int ItemCount)
     {
@@ -20,7 +39,8 @@ public class Inventory : MonoBehaviour
             if (items[i] == null)
             {
                 items[i] = itemToAdd;
-                itemImages[i].sprite = itemToAdd.sprite;
+
+                itemImages[i].sprite = this.GetItemSprite(itemToAdd);
                 itemImages[i].enabled = true;
                 return;
             }
