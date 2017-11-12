@@ -11,9 +11,9 @@ public class TravellerController : MonoBehaviour
         Inventory PlayerInventory = GetComponentInChildren<Inventory>();
         if (PlayerInventory != null)
         {
-            PlayerInventory.AddItem(new Item(Item.Type.Food), 1);
+            PlayerInventory.AddItem(new Item(Item.Type.Water), 15);
             PlayerInventory.AddItem(new Item(Item.Type.Water), 13);
-            PlayerInventory.AddItem(new Item(Item.Type.Gasoline), 62);
+            PlayerInventory.AddItem(new Item(Item.Type.Water), 62);
         }
 	}
 

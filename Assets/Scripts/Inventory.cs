@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public Image[] itemImages = new Image[numItemSlots];
+    public ItemSlot[] itemSlots = new ItemSlot[numItemSlots];
     public Item[] items = new Item[numItemSlots];
 
     public const int numItemSlots = 3;
@@ -36,12 +36,23 @@ public class Inventory : MonoBehaviour
         //look through all items slots to find one that is empty --> then populate it with desired amount of items
         for (int i = 0; i < items.Length; i++)
         {
+            if (items[i] != null &&
+                items[i].type == itemToAdd.type)
+            {
+                items[i].amount += ItemCount;
+                itemSlots[i].SetAmount(items[i].amount);
+
+                return;
+            }
+
             if (items[i] == null)
             {
                 items[i] = itemToAdd;
+                items[i].amount = ItemCount;
 
-                itemImages[i].sprite = this.GetItemSprite(itemToAdd);
-                itemImages[i].enabled = true;
+                itemSlots[i].SetIcon(GetItemSprite(itemToAdd));
+                itemSlots[i].SetAmount(items[i].amount);
+
                 return;
             }
         }
@@ -55,8 +66,7 @@ public class Inventory : MonoBehaviour
             if (items[i] == itemToRemove)
             {
                 items[i] = null;
-                itemImages[i].sprite = null;
-                itemImages[i].enabled = false;
+
                 return;
             }
         }

@@ -18,4 +18,6 @@ public class Item
         Gasoline
     };
     public Type type;
+
+    public int amount = 0;
 }
