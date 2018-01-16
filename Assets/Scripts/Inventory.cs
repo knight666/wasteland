@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour
 
     public const int numItemSlots = 3;
 
+    public Inventory()
+    {
+    }
+
     public Sprite GetItemSprite(Item item)
     {
         switch (item.type)
@@ -47,6 +51,7 @@ public class Inventory : MonoBehaviour
 
             if (items[i] == null)
             {
+                
                 items[i] = itemToAdd;
                 items[i].amount = ItemCount;
 

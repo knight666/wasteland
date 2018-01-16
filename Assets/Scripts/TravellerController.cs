@@ -12,8 +12,8 @@ public class TravellerController : MonoBehaviour
         if (PlayerInventory != null)
         {
             PlayerInventory.AddItem(new Item(Item.Type.Water), 15);
-            PlayerInventory.AddItem(new Item(Item.Type.Water), 13);
-            PlayerInventory.AddItem(new Item(Item.Type.Water), 62);
+           // PlayerInventory.AddItem(new Item(Item.Type.Water), 13);
+           // PlayerInventory.AddItem(new Item(Item.Type.Water), 62);
         }
 	}
 
