@@ -35,6 +35,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void Clear()
+    {
+
+    }
+
     public void AddItem(Item itemToAdd, int ItemCount)
     {
         //look through all items slots to find one that is empty --> then populate it with desired amount of items

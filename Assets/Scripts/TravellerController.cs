@@ -30,7 +30,7 @@ public class TravellerController : MonoBehaviour
 				{
 					transform.position = hit.transform.position;
 				}
-			}
+            }
 		}
 	}
 }
