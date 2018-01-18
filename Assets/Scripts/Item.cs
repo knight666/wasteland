@@ -1,7 +1,10 @@
 ﻿
 using UnityEngine;
+using System;
+using System.Collections;
 
 
+[System.Serializable]
 public class Item
 {
     public Item(Type type)

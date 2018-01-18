@@ -8,7 +8,7 @@ public class TravellerController : MonoBehaviour
 
 	void Start()
 	{
-        Inventory PlayerInventory = GetComponentInChildren<Inventory>();
+        InventoryView PlayerInventory = GetComponentInChildren<InventoryView>();
         if (PlayerInventory != null)
         {
             PlayerInventory.AddItem(new Item(Item.Type.Water), 15);

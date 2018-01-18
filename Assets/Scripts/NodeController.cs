@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class NodeController : MonoBehaviour {
 
-    public Inventory inventory;
+    public Item[] Inventory = new Item[3];
+    public InventoryView Renderer;
 
     void Start()
     {
-        inventory = GetComponentInChildren<Inventory>();
+        Renderer = GetComponentInChildren<InventoryView>();
     }
 
     // Update is called once per frame
@@ -18,6 +19,6 @@ public class NodeController : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        inventory.AddItem(new Item(Item.Type.Water), 15);
+        Renderer.Render(Inventory);
     }
 }

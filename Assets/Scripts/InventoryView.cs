@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Inventory : MonoBehaviour
+public class InventoryView : MonoBehaviour
 {
     public ItemSlot[] itemSlots = new ItemSlot[numItemSlots];
     public Item[] items = new Item[numItemSlots];
 
     public const int numItemSlots = 3;
 
-    public Inventory()
+    public InventoryView()
     {
     }
 
@@ -35,9 +35,15 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Clear()
+    public void Render(Item[] modelItems)
     {
+        for (int i = 0; i < modelItems.Length; i++)
+        {
+            var item = modelItems[i];
 
+            itemSlots[i].SetIcon(GetItemSprite(item));
+            itemSlots[i].SetAmount(item.amount);
+        }
     }
 
     public void AddItem(Item itemToAdd, int ItemCount)
